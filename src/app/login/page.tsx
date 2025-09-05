@@ -1,60 +1,62 @@
-"use client";
+'use client'
 
-import { useState } from "react";
-import { useRouter } from "next/navigation";
-import Cookies from "js-cookie";
-import { style } from "../career/cardStyle";
+import { useState } from 'react'
+import { useRouter } from 'next/navigation'
+import Cookies from 'js-cookie'
+import { style } from '../career/cardStyle'
 
 export default function LoginPage() {
-  const router = useRouter();
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [error, setError] = useState("");
+  const router = useRouter()
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
+  const [error, setError] = useState('')
+  const [showPassword, setShowPassword] = useState(false)
 
   // Hardcoded credentials
-  const hardcodedEmail = "b18158031.muhammaddanish@gmail.com";
-  const hardcodedPassword = "123456";
+  const hardcodedEmail = 'b18158031.muhammaddanish@gmail.com'
+  const hardcodedPassword = '123456'
 
   const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
+    e.preventDefault()
 
     if (email === hardcodedEmail && password === hardcodedPassword) {
-      Cookies.set("auth", "true");
-      router.push("/dashboard");
+      Cookies.set('auth', 'true')
+      router.push('/dashboard')
     } else {
-      setError("Invalid email or password!");
+      setError('Invalid email or password!')
     }
-  };
+  }
 
   return (
     <>
       <style jsx>{style}</style>
       <div
-        className="flex min-h-screen justify-center items-center px-2 sm:px-4 md:px-6 lg:px-10 py-4 sm:py-6 md:py-8 lg:py-12 relative"
+        className="w-auto flex min-h-screen justify-center items-center px-2 sm:px-4 md:px-6 lg:px-10 py-4 sm:py-6 md:py-8 lg:py-12 relative"
         style={{
           backgroundImage: "url('/images/bg-login.jpg')",
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          backgroundRepeat: "no-repeat",
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat',
         }}
       >
-        <div className="relative z-10 w-full sm:w-4/5 md:w-3/4 lg:w-1/2 max-w-[95%] sm:max-w-md lg:max-w-lg p-2 sm:p-4 md:p-6 lg:p-8 bg-white/80 backdrop-blur-sm rounded-xl shadow-[0_8px_30px_rgb(0,0,0,0.12)] border border-white/40">
+        {/* Increased width for desktop screens */}
+        <div className="relative z-10 w-full max-w-[95%] sm:max-w-[90%] md:max-w-[75%] lg:max-w-[50%] xl:max-w-[40%] 2xl:max-w-[35%] p-4 sm:p-6 md:p-8 bg-white/80 backdrop-blur-sm rounded-xl shadow-[0_8px_30px_rgb(0,0,0,0.12)] border border-white/40">
           <form
             onSubmit={handleSubmit}
-            className="bg-white/90 p-3 sm:p-4 md:p-6 lg:p-8 rounded-2xl shadow-[0_20px_50px_rgba(0,0,0,0.7)] border-2 border-gradient-to-r from-orange-400 to-black-500 hover:shadow-[0_20px_60px_rgba(255,165,0,0.9)] transition-all duration-300 backdrop-blur-sm"
+            className="bg-white/90 p-4 sm:p-6 md:p-8 rounded-2xl shadow-[0_20px_50px_rgba(0,0,0,0.7)] border-2 border-gradient-to-r from-orange-400 to-black-500 hover:shadow-[0_20px_60px_rgba(255,165,0,0.9)] transition-all duration-300 backdrop-blur-sm"
           >
-            <h2 className="text-xl sm:text-2xl md:text-3xl font-bold mb-3 sm:mb-4 md:mb-6 text-center text-gray-800">
+            <h2 className="text-xl sm:text-2xl md:text-3xl font-bold mb-4 sm:mb-6 text-center text-gray-800">
               Login to <span className="text-[#e76c02]">DGL</span>
             </h2>
 
             {error && (
-              <p className="text-red-500 text-center mb-3 sm:mb-4 font-medium text-xs sm:text-sm md:text-base">
+              <p className="text-red-500 text-center mb-4 font-medium text-sm md:text-base">
                 {error}
               </p>
             )}
 
-            <div className="m-2 sm:m-3 md:m-4">
-              <label className="block text-gray-700 font-medium mb-1 sm:mb-2 text-xs sm:text-sm md:text-base">
+            <div className="mb-4 sm:mb-5 md:mb-6">
+              <label className="block text-gray-700 font-medium mb-2 text-sm md:text-base">
                 Email
               </label>
               <input
@@ -62,28 +64,46 @@ export default function LoginPage() {
                 placeholder="Enter your email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="w-full border border-gray-300 rounded-lg p-1.5 sm:p-2 md:p-3 focus:outline-none focus:ring-2 focus:ring-[#e76c02] transition text-xs sm:text-sm md:text-base"
+                className="w-full border border-gray-300 rounded-lg p-2 sm:p-3 focus:outline-none focus:ring-2 focus:ring-[#e76c02] transition text-sm md:text-base"
                 required
               />
             </div>
 
-            <div className="m-2 sm:m-3 md:m-4">
-              <label className="block text-gray-700 font-medium mb-1 sm:mb-2 text-xs sm:text-sm md:text-base">
+            <div className="mb-4 sm:mb-5 md:mb-6">
+              <label className="block text-gray-700 font-medium mb-2 text-sm md:text-base">
                 Password
               </label>
-              <input
-                type="password"
-                placeholder="Enter your password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                className="w-full border border-gray-300 rounded-lg p-1.5 sm:p-2 md:p-3 focus:outline-none focus:ring-2 focus:ring-[#e76c02] transition text-xs sm:text-sm md:text-base"
-                required
-              />
+              <div className="relative">
+                <input
+                  type={showPassword ? "text" : "password"}
+                  placeholder="Enter your password"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  className="w-full border border-gray-300 rounded-lg p-2 sm:p-3 focus:outline-none focus:ring-2 focus:ring-[#e76c02] transition text-sm md:text-base pr-10"
+                  required
+                />
+                <button
+                  type="button"
+                  className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500 hover:text-gray-700"
+                  onClick={() => setShowPassword(!showPassword)}
+                >
+                  {showPassword ? (
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5 md:w-6 md:h-6">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M3.98 8.223A10.477 10.477 0 001.934 12C3.226 16.338 7.244 19.5 12 19.5c.993 0 1.953-.138 2.863-.395M6.228 6.228A10.45 10.45 0 0112 4.5c4.756 0 8.773 3.162 10.065 7.498a10.523 10.523 0 01-4.293 5.774M6.228 6.228L3 3m3.228 3.228l3.65 3.65m7.894 7.894L21 21m-3.228-3.228l-3.65-3.65m0 0a3 3 0 10-4.243-4.243m4.242 4.242L9.88 9.88" />
+                    </svg>
+                  ) : (
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5 md:w-6 md:h-6">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M2.036 12.322a1.012 1.012 0 010-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178z" />
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                    </svg>
+                  )}
+                </button>
+              </div>
             </div>
 
             <button
               type="submit"
-              className="btn-submit w-full sm:w-3/4 md:w-1/2 block mx-auto mt-3 sm:mt-4 text-xs sm:text-sm md:text-base py-1.5 sm:py-2 md:py-3 m-2 sm:m-3 md:m-4"
+              className="btn-submit w-1/2 md:w-3/4 lg:w-2/3 xl:w-1/2 block mx-auto mt-4 sm:mt-6 text-sm md:text-base py-2 sm:py-3 md:py-3 font-medium rounded-lg"
             >
               Login
             </button>
@@ -91,5 +111,5 @@ export default function LoginPage() {
         </div>
       </div>
     </>
-  );
+  )
 }
