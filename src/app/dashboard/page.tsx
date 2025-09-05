@@ -58,7 +58,7 @@ const appRows = [
         </h1>
         <button
           onClick={handleLogout}
-          className="btn-submit w-1/2 sm:w-auto"
+          className="btn-submit w-1/8 sm:w-auto"
         >
           Logout
         </button>
