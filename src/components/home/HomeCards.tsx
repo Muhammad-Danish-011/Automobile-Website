@@ -7,7 +7,7 @@ export interface HomeCardProps {
   link: string;
 }
 
-export const HomeCard = ({ image, title, text, link }: HomeCardProps) => {
+export const HomeCard = ({ image, title, text }: HomeCardProps) => {
   return (
     <div className={styles.blog_slider}>
       <div className={`${styles.blog_slider__wrp} ${styles.swiper_wrapper}`}>

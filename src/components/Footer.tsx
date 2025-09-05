@@ -18,9 +18,9 @@ const Footer: NextPage = () => {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' })
-  }
+  // const scrollToTop = () => {
+  //   window.scrollTo({ top: 0, behavior: 'smooth' })
+  // }
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     setEmail(e.target.value)

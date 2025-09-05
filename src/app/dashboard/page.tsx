@@ -29,24 +29,24 @@ export default function Dashboard() {
     "Resume",
     "Cover Letter",
   ];
-  const appRows = [
-    [
-      "Bilal Hussain",
-      "bilal@example.com", 
-      "+92 322 1122334",
-      "Frontend Developer",
-      <a href="/resume.pdf" className="text-blue-600 underline">View</a>,
-      "Excited to apply!",
-    ],
-    [
-      "Maria Khan",
-      "maria@example.com",
-      "+92 345 5566778", 
-      "Backend Developer",
-      <a href="/resume.pdf" className="text-blue-600 underline">View</a>,
-      "Looking forward to this opportunity.",
-    ],
-  ];
+const appRows = [
+  [
+    "Bilal Hussain",
+    "bilal@example.com", 
+    "+92 322 1122334",
+    "Frontend Developer",
+    <a key="bilal-resume" href="/resume.pdf" className="text-blue-600 underline">View</a>,
+    "Excited to apply!",
+  ],
+  [
+    "Maria Khan",
+    "maria@example.com",
+    "+92 345 5566778", 
+    "Backend Developer",
+    <a key="maria-resume" href="/resume.pdf" className="text-blue-600 underline">View</a>,
+    "Looking forward to this opportunity.",
+  ],
+];
 
   return (
     <>
