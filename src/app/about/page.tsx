@@ -42,7 +42,7 @@ export default function About() {
         <Heading headingText="Our Team" />
         <div className={styles.helm}>
               <MemberCard
-            imageSrc="/images/about/team/"
+            imageSrc="/images/about/team/amir.jpg"
             memberName="Amir"
             memberDesignation="Business Unit Head Zimbabwe"
             memberInstagram=""
