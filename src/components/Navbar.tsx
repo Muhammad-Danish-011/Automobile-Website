@@ -15,7 +15,6 @@ function NavBar() {
   useEffect(() => {
     const handleResize = () => {
       setIsSmallScreen(window.innerWidth <= 992)
-      // Close dropdown when resizing to larger screen
       if (window.innerWidth > 992) {
         setShowDropdown(false)
         setMenuOpen(false)

@@ -1,6 +1,5 @@
 'use client'
 import styles from '@/styles/About.module.css'
-import ReactPlayer from 'react-player'
 import MemberCard from './MemberCard'
 import AboutTeam from './AboutTeam'
 import HeroSection from '@/components/HeroSection'

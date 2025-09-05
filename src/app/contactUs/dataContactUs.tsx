@@ -1,6 +1,6 @@
 
 
-import { FaHeartbeat, FaPiggyBank, FaHandsHelping, FaBus, FaDollarSign, FaChartLine, FaUmbrellaBeach, FaPlane, FaCalendarAlt, FaTrophy, FaSeedling, FaGraduationCap, FaUsers, FaLaptopHouse, FaGlobe, FaShieldAlt } from "react-icons/fa";
+import { FaHeartbeat, FaPiggyBank, FaHandsHelping, FaBus, FaDollarSign, FaChartLine, FaUmbrellaBeach, FaPlane, FaCalendarAlt, FaTrophy, FaSeedling, FaGraduationCap, FaUsers, FaGlobe, FaShieldAlt } from "react-icons/fa";
 
 
 export const benefits = [

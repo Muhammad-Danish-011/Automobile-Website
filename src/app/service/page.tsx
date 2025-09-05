@@ -2,8 +2,6 @@
 'use client';
 import styles from '@/styles/Trident.module.css'
 import HeroSection from '@/components/HeroSection'
-import type { Metadata } from 'next'
-import Heading from '@/components/Heading'
 import Image from 'next/image'
 import {style} from "../career/cardStyle"
 import { services } from './serviceData'
