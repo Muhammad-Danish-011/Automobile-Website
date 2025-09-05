@@ -1,0 +1,297 @@
+.outer {
+  background: linear-gradient(359deg, #450800 0%, #EE3A24 100%);
+  height: 40vh;
+  padding: 0.5vh 0.3% 0.2vh 0.3%;
+}
+
+.inner {
+  background-color: #1b1a1b;
+  border-radius: 2vh;
+  height: 39vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  padding-inline: 3rem;
+}
+
+.addlheading {
+  display: none;
+}
+
+.logoContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.building {
+  width: 11rem;
+  height: auto;
+}
+
+.saeLogo {
+  width: 15rem;
+}
+
+.address {
+  display: flex;
+  flex-direction: column;
+  width: 25%;
+}
+
+.addheading {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-bottom: 1.7rem;
+}
+
+.heading1 {
+  background-image: linear-gradient(90.94deg, #e25420, #f69448);
+  background-clip: text;
+  color: transparent;
+  font-weight: 700;
+  font-size: 2.5vw;
+}
+
+.heading2 {
+  color: white;
+  padding-left: 3%;
+  font-weight: 600;
+  font-size: 2.5vw;
+  white-space: nowrap;
+}
+
+.address p {
+  font-size: 1.5vw;
+  color: white;
+}
+
+.social {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.social h2 {
+  color: white;
+  font-weight: 600;
+  font-size: 2.5vw;
+}
+
+.socialContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem
+}
+
+.socialContainerChild {
+  display: flex;
+  flex-direction: row;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.socialContainer a {
+  text-decoration: none;
+  color: white;
+  font-size: 1.2rem;
+}
+
+.submitcol {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 5rem;
+  align-items: center;
+}
+
+.submitcol h2 {
+  font-size: 2.5vw;
+  color: white;
+  font-weight: 600;
+}
+
+
+.form {
+  max-width: 100%;
+  position: relative;
+}
+
+.form input {
+  background: white;
+  opacity: 0.2;
+  width: 100%;
+  color: black;
+  border: none;
+  height: 5vh;
+  border-radius: 11px;
+  padding-left: 1vw;
+  margin-top: 2vh;
+}
+
+.form input::placeholder {
+  color: black;
+}
+
+.form button {
+  background: none;
+  border: none;
+  position: relative;
+  left: 80%;
+  bottom: 4.5vh;
+  padding-bottom: 10%
+}
+
+.submitimg {
+  width: 80%;
+  height: auto;
+}
+
+.nfoot {
+  display: none;
+}
+
+.scrollButton {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  z-index: 9999;
+}
+
+.scrollImage {
+  width: 40px;
+  height: auto;
+  cursor: pointer;
+}
+
+@media screen and (max-width:1150px) {
+
+  .building,
+  .address {
+    display: none;
+  }
+
+  .inner {
+    justify-content: space-around;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .addlheading {
+    display: flex;
+  }
+
+  .addlheading h2 {
+    font-size: 3.5vw;
+  }
+
+  .headingl1 {
+    background-image: linear-gradient(90.94deg, #e25420, #f69448);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    font-weight: 700;
+  }
+
+  .headingl2 {
+    color: white;
+    padding-left: 3%;
+    font-weight: 600;
+    white-space: nowrap;
+  }
+
+  .social h2 {
+    font-size: 3.5vw;
+  }
+
+  .submitcol h2 {
+    font-size: 3.5vw;
+  }
+
+  .form button {
+    left: 78%
+  }
+
+  .submitcol h2,
+  .submitcol {
+    padding-left: 0;
+    padding-top: 2.5vh;
+  }
+}
+
+@media screen and (max-width:800px) {
+
+  .logoContainer,
+  .address,
+  .social,
+  .submitcol {
+    display: none;
+  }
+
+  .nfoot {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 30vh;
+  }
+
+  .inner {
+    padding-left: 0;
+  }
+
+  .nsocial {
+    display: flex;
+    flex-direction: row;
+    gap: 2vw
+  }
+
+  .addheading {
+    margin-bottom: 1vw;
+  }
+
+  .heading1 {
+    font-size: 5vw;
+  }
+
+  .heading2 {
+    font-size: 5vw;
+  }
+
+  .smlSaeLogo {
+    width: calc(3rem + 25vw);
+    padding-top: 0;
+    padding-bottom: 0.8vh;
+  }
+
+  .niit {
+    margin-top: 1vw;
+    color: white;
+    font-size: 4vw;
+  }
+}
+
+@media screen and (max-width:650px) {
+
+  .ninstaicon,
+  .nfacebookicon,
+  .nlinkedinicon,
+  .nemailicon {
+    width: 12vw;
+  }
+
+  .heading1,
+  .heading2 {
+    font-size: 8vw;
+  }
+
+  .smlSaeLogo {
+    width: calc(3rem + 30vw);
+  }
+
+  .niit {
+    font-size: 6vw;
+  }
+}

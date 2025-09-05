@@ -1,0 +1,372 @@
+.sae_intro {
+  padding-top: 2.25em;
+  background-color: #1b1a1b;
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  grid-gap: 10px;
+  width: 100%;
+  height: 37vw;
+  padding-inline: 2vw;
+}
+
+.cards_img_saeintro {
+  margin-top: 3vw;
+  width: 100%;
+  height: 97%;
+}
+
+.sae_headings {
+  color: white;
+  text-align: center;
+  padding-top: 6vw;
+}
+
+.sae_long_text {
+  text-align: center;
+  color: white;
+  padding-top: 0.65vw;
+  padding-left: 1.62vw;
+  padding-right: 1.62vw;
+  font-weight: 400;
+  font-size: 1.25rem;
+  font-family: var(--font-poppins) !important;
+}
+
+.social_media {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding-top: 0.65vw;
+  padding-bottom: 1vw;
+  gap: 1vw;
+}
+
+.social_media>a {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.social_media>a>img {
+  width: 40px;
+}
+
+.line {
+  border-top: 1px solid white;
+  margin: 0 auto;
+  width: 34.75vw;
+  padding-bottom: 5vw;
+}
+
+/* Our achievments*/
+/* Our achievments */
+
+.ourachievments_sae {
+  background-color: rgb(236, 236, 241);
+  height: fit-content;
+  border-bottom: 3px solid rgb(207, 207, 207);
+  padding: 2.5vw 0 2vw 0;
+}
+
+.achievments_cards_sae {
+  gap: 5vw;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding-inline: 11vw;
+}
+
+/* our mentors section */
+/* our mentors section */
+
+/* our mentors section */
+/* our mentors section */
+.ourmentor {
+  background-color: rgb(236, 236, 241);
+  padding-bottom: 5vw;
+}
+
+@media screen and (max-width: 3000px) {
+  .vmBtn {
+    display: flex;
+    margin: 0 auto;
+    margin-bottom: 4vw;
+    background-color: rgb(242, 84, 2);
+    width: 140px;
+    height: 36px;
+    border-radius: 20px;
+    color: white;
+    text-decoration: none;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  }
+}
+
+.vmBtn:hover {
+  color: white;
+  transform: translateY(-1px);
+}
+
+.vmBtn:active {
+  transform: translateY(2px);
+  transform: translateX(-2px);
+}
+
+.card_container {
+  display: flex;
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  overflow: hidden;
+}
+
+.card_slider {
+  display: flex;
+  gap: 30px;
+  transition: transform 0.5s ease-in-out;
+  animation: slide 9s infinite;
+}
+
+@keyframes slide {
+  0% {
+    transform: translateX(0);
+  }
+  33% {
+    transform: translateX(-100%);
+  }
+  66% {
+    transform: translateX(-200%); 
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+/* Pause animation on hover */
+.card_slider:hover {
+  animation-play-state: paused;
+}
+
+@media screen and (max-width: 1200px) {
+  .vmBtn {
+    width: 100px;
+    height: 30px;
+  }
+}
+
+@media screen and (max-width: 1150px) {
+  .social_media>a>img {
+    width: 35px;
+  }
+
+  .sae_long_text {
+    font-size: 1rem;
+    margin-bottom: 2px;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .sae_headings {
+    color: white;
+    text-align: center;
+    padding-top: 4vw;
+  }
+
+  .ourachievments_sae {
+    padding: 4vw 0 2vw 0;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .social_media {
+    gap: 1.5vw;
+  }
+
+  .sae_long_text {
+    font-size: 0.8rem;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .sae_headings {
+    color: white;
+    text-align: center;
+    padding-top: 4vw;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .sae_intro {
+    padding-top: 0;
+    grid-template-columns: 1fr;
+    grid-gap: 3px;
+    width: 100%;
+    height: auto;
+  }
+
+  .sae_name_text {
+    font-size: 36px;
+  }
+
+  .sae_long_text {
+    padding-top: 12px;
+    padding-left: 2.5em;
+    padding-right: 2.5em;
+    font-weight: 400;
+  }
+
+  .social_media {
+    padding-top: 10px;
+    padding-bottom: 1em;
+  }
+
+  .cards_img_saeintro {
+    display: none;
+  }
+
+  .line {
+    width: 68vw;
+  }
+}
+
+@media screen and (max-width: 600px) {
+
+  .social_media {
+    gap: 2vw;
+  }
+
+  .achievments_cards_sae {
+    gap: 6vw;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .ourachievments_sae {
+    height: fit-content;
+  }
+
+  .achievments_cards_sae {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-left: 0vw;
+  }
+}
+
+@media screen and (max-width: 500px) {
+
+  .sae_long_text {
+    padding-top: 12px;
+    padding-left: 2.5em;
+    padding-right: 2.5em;
+    font-weight: 400;
+  }
+
+  .social_media {
+    padding-top: 10px;
+    padding-bottom: 1em;
+  }
+
+  .cards_img_saeintro {
+    display: none;
+  }
+
+  .line {
+    width: 68vw;
+  }
+
+  .achievments_cards_sae {
+    padding-right: 6vw;
+  }
+}
+
+@media screen and (max-width: 430px) {
+
+  .sae_long_text {
+    padding-top: 12px;
+    padding-left: 2.5em;
+    padding-right: 2.5em;
+    font-weight: 400;
+  }
+
+  .social_media {
+    padding-top: 10px;
+    padding-bottom: 1em;
+  }
+
+  .cards_img_saeintro {
+    display: none;
+  }
+
+  .line {
+    width: 68vw;
+  }
+}
+
+
+@media screen and (min-width: 1250px) {
+  .card_container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    /* Three columns */
+    grid-template-rows: repeat(1,
+        50vw);
+    /* Three rows with a height of 100px each */
+    gap: 10px;
+    padding-bottom: 3vw;
+  }
+}
+
+@media screen and (min-width: 890px) and (max-width: 1250px) {
+  .card_container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    /* Two columns */
+    /* grid-template-rows: repeat(3, 80vw); Three rows with a height of 100px each */
+    gap: 1px;
+    /* Gap between grid items */
+  }
+
+  .card4:nth-child(3) {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 800px) and (max-width: 890px) {
+  .card_container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    /* Two columns */
+    grid-template-rows: repeat(1,
+        65vw);
+    /* Three rows with a height of 100px each */
+    gap: 10px;
+    /* Gap between grid items */
+  }
+
+  .card4:nth-child(3) {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .card4:nth-child(3) {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 1250px) {
+  .vmBtn {
+    margin-top: -8vw;
+  }
+}
+
+@media screen and (min-width: 1950px) {
+  .vmBtn {
+    margin-top: -20vw;
+  }
+}
