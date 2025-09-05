@@ -41,7 +41,7 @@ function Home() {
       {/* Hero Section */}
       <div className={styles.sae_intro}>
         <Image
-          src="/images/home/Car.gif"
+          src="/images/home/car.gif"
           alt="card"
           width={1007}
           height={627}
