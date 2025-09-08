@@ -80,9 +80,15 @@
 }
 
 .timeline_item .timeline_img_header {
-  background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.4)),
-    url('https://picsum.photos/1000/800/?random') center center no-repeat;
+  /* Add a background color while image loads */
+  background-color: #f5f5f5;
+  background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.4)),
+    url('https://picsum.photos/1000/800/?random');
+  background-position: center center;
+  background-repeat: no-repeat;
   background-size: cover;
+  will-change: background-image;
+  contain: paint;
 }
 
 .timeline_img_header {
