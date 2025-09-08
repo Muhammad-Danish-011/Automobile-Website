@@ -51,6 +51,9 @@ function Career() {
 
       {/* Hero Section */}
       <HeroSection title={title} content={content} isContactUs={false} />
+      <br />      <br />
+      <br /> 
+   
 
       {/* Job Listings Slider */}
       <section className="jobs-section">
