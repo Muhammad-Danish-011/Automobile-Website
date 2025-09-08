@@ -4,11 +4,10 @@ import { useState, useEffect } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { jobListings,benefits  } from "./dataCareer";
-import HeroSection from "@/components/HeroSection"; 
+import { jobListings, benefits } from "./dataCareer";
+import HeroSection from "@/components/HeroSection";
 import { style } from "./cardStyle";
-
-
+import ApplyFormModal from "./ApplyFormModal";
 
 function Career() {
   const [showForm, setShowForm] = useState(false);
@@ -24,13 +23,8 @@ function Career() {
     setSelectedJob(null);
   };
 
-  // Handle body scroll lock safely
   useEffect(() => {
-    if (showForm) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "auto";
-    }
+    document.body.style.overflow = showForm ? "hidden" : "auto";
   }, [showForm]);
 
   const title = "Career Opportunities";
@@ -54,9 +48,9 @@ function Career() {
   return (
     <div className="bg-black min-h-screen">
       <style jsx>{style}</style>
-      
+
       {/* Hero Section */}
-      <HeroSection  title={title} content={content} isContactUs={false} />
+      <HeroSection title={title} content={content} isContactUs={false} />
 
       {/* Job Listings Slider */}
       <section className="jobs-section">
@@ -80,10 +74,7 @@ function Career() {
                       ))}
                     </ul>
                   </div>
-                  <button
-                    onClick={() => openForm(job.title)}
-                    className="apply-button"
-                  >
+                  <button onClick={() => openForm(job.title)} className="apply-button">
                     Apply Now
                   </button>
                 </div>
@@ -109,80 +100,10 @@ function Career() {
 
       {/* Apply Form Modal */}
       {showForm && (
-        <div className="modal-overlay" onClick={closeForm}>
-          <div className="modal-content" onClick={(e) => e.stopPropagation()}>
-            <button className="modal-close" onClick={closeForm} aria-label="Close">
-              ×
-            </button>
-
-            <h2 className="modal-title">Apply for {selectedJob}</h2>
-
-            <form
-              onSubmit={(e) => {
-                e.preventDefault();
-                alert(`Application submitted for ${selectedJob}`);
-                closeForm();
-              }}
-            >
-              <div className="form-group">
-                <label className="form-label">Full Name</label>
-                <input type="text" required className="form-input" />
-              </div>
-
-              <div className="form-group">
-                <label className="form-label">Email Address</label>
-                <input type="email" required className="form-input" />
-              </div>
-
-              <div className="form-group">
-                <label className="form-label">Phone Number</label>
-                <input type="tel" required className="form-input" />
-              </div>
-
-              <div className="form-group">
-                <label className="form-label">Position</label>
-                <input
-                  type="text"
-                  value={selectedJob || ""}
-                  readOnly
-                  className="form-input"
-                />
-              </div>
-
-              <div className="form-group">
-                <label className="form-label">Resume (PDF, DOC, DOCX)</label>
-                <input
-                  type="file"
-                  accept=".pdf,.doc,.docx"
-                  required
-                  className="form-input-file"
-                />
-              </div>
-
-              <div className="form-group">
-                <label className="form-label">Cover Letter</label>
-                <textarea
-                  placeholder="Tell us why you're interested..."
-                  className="form-textarea"
-                />
-              </div>
-
-              <div className="form-buttons">
-                <button type="button" onClick={closeForm} className="btn-cancel">
-                  Cancel
-                </button>
-                <button type="submit" className="btn-submit">
-                  Submit Application
-                </button>
-              </div>
-            </form>
-          </div>
-        </div>
+        <ApplyFormModal selectedJob={selectedJob} onClose={closeForm} />
       )}
     </div>
   );
 }
 
 export default Career;
-
-
