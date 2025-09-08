@@ -146,18 +146,30 @@ export default function Services() {
     </div>
 
 
-          <section className="benefits-section">
-        <h1 className="benefits-heading">Why Choose Us?</h1>
-        <div className="benefits-container">
-          {services.map((service, index) => (
-            <div key={index} className="benefit-item">
-              <div className="benefit-icon">{service.icon}</div>
-              <h3 className="benefit-title">{service.title}</h3>
-              <p className="benefit-text">{service.description}</p>
+          <section className="benefits-section py-16 px-4 bg-gray-100 text-center overflow-x-hidden">
+      <h1 className="benefits-heading text-3xl md:text-4xl font-bold mb-12 text-gray-900">
+        Why Choose Us?
+      </h1>
+
+      <div className="benefits-container grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto w-full px-4">
+        {services.map((service, index) => (
+          <div
+            key={index}
+            className="benefit-item bg-white rounded-xl p-6 md:p-8 shadow-md transition duration-300 hover:-translate-y-1 hover:shadow-xl w-full"
+          >
+            <div className="benefit-icon text-4xl md:text-5xl mb-4 text-[#e76c02]">
+              {service.icon}
             </div>
-          ))}
-        </div>
-      </section>
+            <h3 className="benefit-title text-lg md:text-xl font-semibold mb-3 text-gray-800">
+              {service.title}
+            </h3>
+            <p className="benefit-text text-sm md:text-base text-gray-500 leading-relaxed">
+              {service.description}
+            </p>
+          </div>
+        ))}
+      </div>
+    </section>
 
 
         </div>

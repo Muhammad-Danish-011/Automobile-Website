@@ -25,7 +25,7 @@ const OrangeSection = () => {
               width={40}
               height={50.71}
             />
-            saecollegiateclub.iitbhu@gmail.com
+            dgl.example@gmail.com
           </div>
         </div>
       </div>

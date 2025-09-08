@@ -112,7 +112,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         <Analytics />
         <SpeedInsights />
         <Navbar />
-        <main style={{  paddingTop:'100px' }}>{children}</main>
+        <main style={{  paddingTop:'50px' }}>{children}</main>
         <Footer />
       </body>
     </html>
