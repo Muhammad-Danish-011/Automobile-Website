@@ -42,7 +42,7 @@ export default function ContactUs() {
     <div>
       <style jsx>{style}</style>
       <HeroSection title={title} content={content} isContactUs={true} />
-      <div className="max-w-2xl m-4 p-4 bg-white rounded-lg shadow-lg border border-gray-200">
+      <div className="max-w-2xl m-4 p-4 bg-white rounded-lg shadow-lg border border-gray-200 jobs-section">
         <h2 className="text-3xl font-bold text-center text-black mb-10">
           Contact <span className="text-[#e76c02]">Form</span>
         </h2>
