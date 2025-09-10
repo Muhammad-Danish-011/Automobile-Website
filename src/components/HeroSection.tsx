@@ -15,6 +15,9 @@ const HeroSection = ({
   return (
     <div className={styles.sae_intro}>
       <h1 className={styles.sae_headings}>{title}</h1>
+
+
+      
       <p className={styles.sae_long_text}>{content}</p>
       <div className={styles.social_media}>
         <a

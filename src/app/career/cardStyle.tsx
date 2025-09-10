@@ -160,6 +160,10 @@ export const style = `
     flex-direction: column;
     transition: all 0.3s ease;
     border: 1px solid #e2e8f0;
+    width: 100%;
+    max-width: 420px;
+    margin: auto;
+    box-sizing: border-box;
   }
   .job-card:hover {
     transform: translateY(-5px);
@@ -177,6 +181,8 @@ export const style = `
     justify-content: space-between;
     align-items: center;
     margin-bottom: 1rem;
+    flex-wrap: wrap;
+    gap: 0.5rem;
   }
   .job-location { color: #718096; font-size: 0.9rem; }
   .job-type {
@@ -220,8 +226,19 @@ export const style = `
   .apply-button:hover { background-color: #f57c00; }
 
   /* Slider */
-  .slick-slide { padding: 0 12px; }
-  .slick-list { margin: 0 -12px; }
+  .slide-wrapper {
+    display: flex;
+    justify-content: center;
+    box-sizing: border-box;
+    padding: 0 8px;
+    width: 100%;
+  }
+  .slick-slide {
+    display: flex !important;
+    justify-content: center;
+    box-sizing: border-box;
+  }
+  .slick-list { overflow: hidden; }
   .slick-dots li button:before {
     color: #e76c02;
     font-size: 10px;
@@ -235,6 +252,7 @@ export const style = `
     border-radius: 16px;
     margin: 2rem;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    overflow-x: hidden;
   }
   .section-title {
     font-size: 2.25rem;
@@ -260,9 +278,26 @@ export const style = `
     .benefit-title { font-size: 1.25rem; }
     .benefit-icon { font-size: 2.25rem; }
     .modal-content { padding: 1.5rem; max-width: 95%; }
-    .job-card { padding: 1rem; }
+    .job-card { max-width: 100%; padding: 1rem; }
     .jobs-section { padding: 2rem 1rem; margin: 1rem; }
     .section-title { font-size: 1.75rem; }
+
+    /* Fix slider overflow */
+    .slick-slide {
+      width: 100% !important;
+      display: flex !important;
+      justify-content: center !important;
+    }
+    .slide-wrapper {
+      width: 100% !important;
+      max-width: 100% !important;
+      padding: 0 !important;
+    }
+    .job-card {
+      width: 100% !important;
+      max-width: 100% !important;
+      margin: 0 auto;
+    }
   }
 
   /* Medium screens (tablet) */

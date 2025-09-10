@@ -16,14 +16,59 @@
 }
 
 .sae_headings {
-    font-size: 60px;
+    font-size: clamp(24px, 4vw, 60px);
     margin-top: 0px;
     font-family: "Outfit";
     font-weight: 400;
     color: #f4f4f4;
     padding-top: 6vw;
     text-align: center;
+    scroll-horizontal: auto;
 }
+
+@media screen and (max-width: 1024px) {
+    .sae_intro {
+        height: 50vw;
+    }
+    .sae_headings {
+        font-size: clamp(20px, 3.5vw, 56px);
+        padding-top: 8vw;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .sae_intro {
+        height: 60vw;
+    }
+    .sae_headings {
+        font-size: clamp(18px, 3vw, 52px);
+        padding-top: 10vw;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .sae_intro {
+        height: 80vw;
+        padding-top: 1em;
+    }
+    .sae_headings {
+        font-size: clamp(16px, 2.5vw, 44px);
+        padding-top: 12vw;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    .sae_intro {
+        height: 100vw;
+    }
+    .sae_headings {
+        font-size: clamp(14px, 2vw, 36px);
+        padding-top: 14vw;
+    }
+}
+
+
+
 
 .sae_long_text {
     text-align: center;
