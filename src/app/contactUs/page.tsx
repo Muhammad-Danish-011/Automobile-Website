@@ -6,12 +6,14 @@ import Image from 'next/image'
 import { benefits } from './dataContactUs'
 import { style } from '../career/cardStyle'
 import { useState } from 'react'
+import { useRouter } from 'next/navigation'
 
 const title = 'Contact Us'
 const content =
   'Get in touch with us to learn more about DIGILIGHTED ENTERPRISES and how you can contribute to our mission of advancing technology and innovation. Whether you have questions, ideas for collaboration, or want to be part of our community, we are here to help.'
 
 export default function ContactUs() {
+  const router = useRouter()
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -27,16 +29,55 @@ export default function ContactUs() {
     setFormData({ ...formData, [name]: value })
   }
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    alert(`Message sent from ${formData.name}`)
-    setFormData({
-      name: '',
-      email: '',
-      phone: '',
-      subject: '',
-      message: '',
-    })
+
+    if(formData.name.trim() === '' || formData.email.trim() === '' || formData.phone.trim() === '' || formData.subject.trim() === '' || formData.message.trim() === ''){
+      alert("Please fill all the fields.");
+      return ;
+    }
+    try {
+      // console.log([...formData.entries()])
+      const contactInfo = {
+        FullName: formData.name,
+        Email: formData.email,
+        Phone: formData.phone,
+        Subject: formData.subject,
+        Message: formData.message,
+      }
+
+      const response = await fetch(
+        'https://192.168.21.68:5001/api/DglWebsite/contact',
+        {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json', // 👈 tell backend it's JSON
+          },
+          body: JSON.stringify(contactInfo),
+        }
+      )
+
+      if (response.ok) {
+        const result = await response.json()
+        console.log(result, 'result')
+        alert('Application submitted successfully!')
+
+        setFormData({
+          name: '',
+          email: '',
+          phone: '',
+          subject: '',
+          message: '',
+        })
+        router.push('/')
+        // onClose()
+      } else {
+        alert('Failed to submit application')
+      }
+    } catch (error) {
+      console.log(error, 'eeerrreeerr')
+      alert('Error submitting application')
+    }
   }
   return (
     <div>
@@ -59,7 +100,7 @@ export default function ContactUs() {
               value={formData.name}
               onChange={handleChange}
               placeholder="Enter your full name"
-              required
+              // required
               className="w-full px-4 py-3 border border-gray-300 rounded-md placeholder-gray-400 focus:ring-2 focus:ring-[#e76c02] focus:border-[#e76c02] transition"
             />
           </div>
@@ -75,7 +116,7 @@ export default function ContactUs() {
               value={formData.email}
               onChange={handleChange}
               placeholder="Enter your email address"
-              required
+              // required
               className="w-full px-4 py-3 border border-gray-300 rounded-md placeholder-gray-400 focus:ring-2 focus:ring-[#e76c02] focus:border-[#e76c02] transition"
             />
           </div>
@@ -91,7 +132,7 @@ export default function ContactUs() {
               value={formData.phone}
               onChange={handleChange}
               placeholder="e.g. +92 300 1234567"
-              required
+              // required
               className="w-full px-4 py-3 border border-gray-300 rounded-md placeholder-gray-400 focus:ring-2 focus:ring-[#e76c02] focus:border-[#e76c02] transition"
             />
           </div>
@@ -107,7 +148,7 @@ export default function ContactUs() {
               value={formData.subject}
               onChange={handleChange}
               placeholder="Enter subject"
-              required
+              // required
               className="w-full px-4 py-3 border border-gray-300 rounded-md placeholder-gray-400 focus:ring-2 focus:ring-[#e76c02] focus:border-[#e76c02] transition"
             />
           </div>
@@ -122,33 +163,19 @@ export default function ContactUs() {
               value={formData.message}
               onChange={handleChange}
               placeholder="Write your message here..."
-              required
+              // required
               className="w-full px-4 py-3 border border-gray-300 rounded-md placeholder-gray-400 focus:ring-2 focus:ring-[#e76c02] focus:border-[#e76c02] transition h-36 resize-none"
             />
           </div>
 
           {/* Submit Button */}
           <div className="flex justify-center">
-            <button
-              type="submit"
-              className="btn-submit"
-            >
+            <button type="submit" className="btn-submit">
               Send Message
             </button>
           </div>
         </form>
       </div>
-
-
-
-
-
-
-
-
-
-
-
 
       <div className={styles.outer}>
         {/* Employee Benefits & Perks */}
