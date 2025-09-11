@@ -39,12 +39,7 @@ const [contacts, setContacts] = useState<Contact[]>([]);
     router.push("/login");
   };
 
-  // Dummy Data - replace later with API data
   const contactHeaders = ["Name", "Email", "Phone", "Subject", "Message","createdAt"];
-  // const contactRows = [
-  //   ["Ali Khan", "ali@example.com", "+92 300 1234567", "Inquiry", "Tell me more..."],
-  //   ["Sara Ahmed", "sara@example.com", "+92 301 9876543", "Collaboration", "Interested to join!"],
-  // ];
 
    // convert contacts into Table rows
   const contactRows = contacts.map((c) => [
@@ -65,26 +60,6 @@ const [contacts, setContacts] = useState<Contact[]>([]);
     "Cover Letter",
     "createdAt"
   ];
-// const appRows = [
-//   [
-//     "Bilal Hussain",
-//     "bilal@example.com", 
-//     "+92 322 1122334",
-//     "Frontend Developer",
-//     <a key="bilal-resume" href="/resume.pdf" className="text-blue-600 underline">View</a>,
-//     "Excited to apply!",
-//     "2023-10-01"
-//   ],
-//   [
-//     "Maria Khan",
-//     "maria@example.com",
-//     "+92 345 5566778", 
-//     "Backend Developer",
-//     <a key="maria-resume" href="/resume.pdf" className="text-blue-600 underline">View</a>,
-//     "Looking forward to this opportunity.",
-//     "2023-10-02"
-//   ],
-// ];
 
  const appRows = applications.map((item, index) => [
     item.fullName,
@@ -116,13 +91,11 @@ const [contacts, setContacts] = useState<Contact[]>([]);
     ),
        item.createdDate.split('T')[0],
   ]);
-  // fetch data from API
- // fetch data from API
-   // fetch data from API
+ 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const res = await fetch("https://192.168.21.68:5001/api/DglWebsite/applications");
+        const res = await fetch("https://api20230805195433.azurewebsites.net/api/DglWebsite/applications");
         if (!res.ok) throw new Error("Failed to fetch applications");
 
         const data = await res.json();
@@ -135,13 +108,16 @@ const [contacts, setContacts] = useState<Contact[]>([]);
     };
 
     fetchData();
-  }, []);
-
+    
+    const interval = setInterval(fetchData, 10000);
+    
+    return () => clearInterval(interval);
+}, []);
 
     useEffect(() => {
     const fetchData = async () => {
       try {
-        const res = await fetch("https://192.168.21.68:5001/api/DglWebsite/contact");
+        const res = await fetch("https://api20230805195433.azurewebsites.net/api/DglWebsite/contact");
         if (!res.ok) throw new Error("Failed to fetch contact data");
 
         const data = await res.json();
@@ -154,6 +130,10 @@ const [contacts, setContacts] = useState<Contact[]>([]);
     };
 
     fetchData();
+        
+    const interval = setInterval(fetchData, 10000);
+    
+    return () => clearInterval(interval);
   }, []);
 
 

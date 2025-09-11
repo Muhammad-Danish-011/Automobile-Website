@@ -47,7 +47,7 @@ export default function ContactUs() {
       }
 
       const response = await fetch(
-        'https://192.168.21.68:5001/api/DglWebsite/contact',
+        'https://api20230805195433.azurewebsites.net/api/DglWebsite/contact',
         {
           method: 'POST',
           headers: {

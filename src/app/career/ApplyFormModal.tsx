@@ -50,7 +50,7 @@ if(!fullName || !email || !phone || !resume || !coverLetterFile){
 
     try {
       console.log([...formData.entries()])
-      const response = await fetch('https://192.168.21.68:5001/api/DglWebsite/apply', {
+      const response = await fetch('https://api20230805195433.azurewebsites.net/api/DglWebsite/apply', {
         method: 'POST',
         body: formData,
       })
