@@ -141,13 +141,13 @@ const [contacts, setContacts] = useState<Contact[]>([]);
     <>
     <style jsx>{style}</style>
     <div className="w-full min-h-screen bg-gray-100 p-2 sm:p-4 mx-auto max-w-7xl rounded-[20px]" style={{ marginTop: "6rem" }}>
-      <div className="flex flex-col sm:flex-row justify-between items-center mb-4 p-2 sm:p-4">
-        <h1 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-800 mb-4 sm:mb-0">
+      <div className="flex flex-row justify-between items-center mb-4 p-2 sm:p-4">
+        <h1 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-800">
           Dashboard <span className="text-[#e76c02]">Overview</span>
         </h1>
         <button
           onClick={handleLogout}
-          className="btn-submit w-1/8 sm:w-auto"
+          className="btn-submit w-20 sm:w-24 md:w-28 text-sm sm:text-base"
         >
           Logout
         </button>

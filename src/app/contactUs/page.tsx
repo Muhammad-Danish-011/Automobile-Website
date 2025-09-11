@@ -116,7 +116,8 @@ export default function ContactUs() {
               value={formData.email}
               onChange={handleChange}
               placeholder="Enter your email address"
-              // required
+              pattern="^[a-zA-Z0-9._%+-]+@(?!example\.com)[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
+              title="Please enter a valid email address. Addresses from example.com are not allowed."
               className="w-full px-4 py-3 border border-gray-300 rounded-md placeholder-gray-400 focus:ring-2 focus:ring-[#e76c02] focus:border-[#e76c02] transition"
             />
           </div>
@@ -132,7 +133,8 @@ export default function ContactUs() {
               value={formData.phone}
               onChange={handleChange}
               placeholder="e.g. +92 300 1234567"
-              // required
+              pattern="^(\+92|0)?(3\d{2})?(\d{7})$"
+              title="Please enter a valid Pakistani phone number (e.g. +923001234567)"
               className="w-full px-4 py-3 border border-gray-300 rounded-md placeholder-gray-400 focus:ring-2 focus:ring-[#e76c02] focus:border-[#e76c02] transition"
             />
           </div>
