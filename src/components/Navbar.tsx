@@ -57,20 +57,20 @@ function NavBar() {
 
       {/* Desktop Navigation */}
       {!isSmallScreen ? (
-        <div className={`${styles.linkContainer} flex-grow flex justify-center gap-4 md:gap-6 lg:gap-8`}>
-          <Nav.Link href="/" className={`${styles.links} ${styles.navlinkltr} text-sm md:text-base`}>
-            Home
-          </Nav.Link>
-          <Nav.Link href="/service" className={`${styles.links} ${styles.navlinkltr} text-sm md:text-base`}>
-            Service
-          </Nav.Link>
-          <Nav.Link href="/career" className={`${styles.links} ${styles.navlinkltr} text-sm md:text-base`}>
-            Career
-          </Nav.Link>
-          <Nav.Link href="/about" className={`${styles.links} ${styles.navlinkltr} text-sm md:text-base`}>
-            About
-          </Nav.Link>
-        </div>
+          <div className={`${styles.linkContainer} flex-grow flex justify-center gap-4 md:gap-6 lg:gap-8`}>
+    <Link href="/" className={`${styles.links} ${styles.navlinkltr} text-sm md:text-base`}>
+      Home
+    </Link>
+    <Link href="/service" className={`${styles.links} ${styles.navlinkltr} text-sm md:text-base`}>
+      Service
+    </Link>
+    <Link href="/career" className={`${styles.links} ${styles.navlinkltr} text-sm md:text-base`}>
+      Career
+    </Link>
+    <Link href="/about" className={`${styles.links} ${styles.navlinkltr} text-sm md:text-base`}>
+      About
+    </Link>
+  </div>
       ) : null}
 
       {/* Desktop Buttons */}
