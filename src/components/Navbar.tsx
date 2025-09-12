@@ -72,19 +72,26 @@ function NavBar() {
             href="/service"
             className={`${styles.links} ${styles.navlinkltr} text-sm md:text-base`}
           >
-            Service
+            What we DO
           </Link>
           <Link
             href="/career"
             className={`${styles.links} ${styles.navlinkltr} text-sm md:text-base`}
           >
-            Career
+            Work with Us
           </Link>
           <Link
             href="/about"
             className={`${styles.links} ${styles.navlinkltr} text-sm md:text-base`}
           >
-            About
+            Who we Are
+          </Link>
+          <Link
+            href="/contactUs"
+            className={`${styles.links} ${styles.navlinkltr} text-lg`}
+     
+          >
+                    Get in Touch
           </Link>
         </div>
       ) : null}
@@ -92,16 +99,7 @@ function NavBar() {
       {/* Desktop Buttons */}
       {!isSmallScreen ? (
         <div className="flex gap-2 md:gap-3">
-          <motion.button
-            whileHover={{
-              scale: 1.05,
-              transition: { duration: 0.2 },
-            }}
-            whileTap={{ scale: 0.95 }}
-            className="btn-submit text-sm px-3 py-1.5"
-          >
-            <Nav.Link href="/contactUs">Contact</Nav.Link>
-          </motion.button>
+    
 
           <motion.button
             whileHover={{
@@ -142,34 +140,41 @@ function NavBar() {
             className="fixed top-0 left-0 w-full h-[100dvh] bg-black bg-opacity-95 z-40 flex items-center justify-center overflow-y-auto"
           >
             <div className="flex flex-col items-center justify-center gap-6 w-full px-4">
-              <Nav.Link
+              <Link
                 href="/"
                 className={`${styles.links} ${styles.navlinkltr} text-lg`}
                 onClick={handleLinkClick}
               >
                 Home
-              </Nav.Link>
-              <Nav.Link
+              </Link>
+              <Link
                 href="/service"
                 className={`${styles.links} ${styles.navlinkltr} text-lg`}
                 onClick={handleLinkClick}
               >
-                Service
-              </Nav.Link>
-              <Nav.Link
+                   What we DO
+              </Link>
+              <Link
                 href="/career"
                 className={`${styles.links} ${styles.navlinkltr} text-lg`}
                 onClick={handleLinkClick}
               >
-                Career
-              </Nav.Link>
-              <Nav.Link
+                     Work with Us
+              </Link>
+              <Link
                 href="/about"
                 className={`${styles.links} ${styles.navlinkltr} text-lg`}
                 onClick={handleLinkClick}
               >
-                About
-              </Nav.Link>
+                Who we Are
+              </Link>
+              <Link
+                href="/contactUs"
+                className={`${styles.links} ${styles.navlinkltr} text-lg`}
+                onClick={handleLinkClick}
+              >
+                    Get in Touch
+              </Link>
 
               <div className="flex flex-col gap-4 mt-6 w-full max-w-[280px]">
                 <motion.button
@@ -184,17 +189,7 @@ function NavBar() {
                   <Nav.Link href="/login">Login</Nav.Link>
                 </motion.button>
 
-                <motion.button
-                  whileHover={{
-                    scale: 1.05,
-                    transition: { duration: 0.2 },
-                  }}
-                  whileTap={{ scale: 0.95 }}
-                  className="btn-submit text-base py-2"
-                  onClick={handleLinkClick}
-                >
-                  <Nav.Link href="/contactUs">Contact</Nav.Link>
-                </motion.button>
+               
               </div>
             </div>
           </motion.div>
