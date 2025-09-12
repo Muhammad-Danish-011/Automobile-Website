@@ -196,7 +196,7 @@ export default function ContactUs() {
         {/* Contribution Benefits Section */}{' '}
         <div className={styles.benefits}>
           {' '}
-          <h1 className={styles.benefits_title} style={{ color: 'black' }}>
+          <h1 className="benefits-heading">
             Benefits of Contribution
           </h1>{' '}
           <div className={styles.itemcontainer}>

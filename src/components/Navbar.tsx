@@ -42,7 +42,9 @@ function NavBar() {
   }
 
   return (
-    <nav className={`${styles.navbarBlack} w-full flex items-center justify-between px-4 py-2 md:px-6 md:py-3 lg:px-8 lg:py-4 fixed top-0 left-0 right-0`}>
+    <nav
+      className={`${styles.navbarBlack} w-full flex items-center justify-between px-4 py-2 md:px-6 md:py-3 lg:px-8 lg:py-4 fixed top-0 left-0 right-0`}
+    >
       {/* Logo */}
       <Link href="/" className="flex-shrink-0 z-50 relative">
         <Image
@@ -57,40 +59,52 @@ function NavBar() {
 
       {/* Desktop Navigation */}
       {!isSmallScreen ? (
-          <div className={`${styles.linkContainer} flex-grow flex justify-center gap-4 md:gap-6 lg:gap-8`}>
-    <Link href="/" className={`${styles.links} ${styles.navlinkltr} text-sm md:text-base`}>
-      Home
-    </Link>
-    <Link href="/service" className={`${styles.links} ${styles.navlinkltr} text-sm md:text-base`}>
-      Service
-    </Link>
-    <Link href="/career" className={`${styles.links} ${styles.navlinkltr} text-sm md:text-base`}>
-      Career
-    </Link>
-    <Link href="/about" className={`${styles.links} ${styles.navlinkltr} text-sm md:text-base`}>
-      About
-    </Link>
-  </div>
+        <div
+          className={`${styles.linkContainer} flex-grow flex justify-center gap-4 md:gap-6 lg:gap-8`}
+        >
+          <Link
+            href="/"
+            className={`${styles.links} ${styles.navlinkltr} text-sm md:text-base`}
+          >
+            Home
+          </Link>
+          <Link
+            href="/service"
+            className={`${styles.links} ${styles.navlinkltr} text-sm md:text-base`}
+          >
+            What we DO
+          </Link>
+          <Link
+            href="/career"
+            className={`${styles.links} ${styles.navlinkltr} text-sm md:text-base`}
+          >
+            Work with Us
+          </Link>
+          <Link
+            href="/about"
+            className={`${styles.links} ${styles.navlinkltr} text-sm md:text-base`}
+          >
+            Who we Are
+          </Link>
+          <Link
+            href="/contactUs"
+            className={`${styles.links} ${styles.navlinkltr} text-lg`}
+     
+          >
+                    Get in Touch
+          </Link>
+        </div>
       ) : null}
 
       {/* Desktop Buttons */}
       {!isSmallScreen ? (
         <div className="flex gap-2 md:gap-3">
-          <motion.button
-            whileHover={{
-              scale: 1.05,
-              transition: { duration: 0.2 }
-            }}
-            whileTap={{ scale: 0.95 }}
-            className="btn-submit text-sm px-3 py-1.5"
-          >
-            <Nav.Link href="/contactUs">Contact</Nav.Link>
-          </motion.button>
+    
 
           <motion.button
             whileHover={{
               scale: 1.05,
-              transition: { duration: 0.2 }
+              transition: { duration: 0.2 },
             }}
             whileTap={{ scale: 0.95 }}
             className="btn-submit text-sm px-3 py-1.5"
@@ -99,10 +113,17 @@ function NavBar() {
           </motion.button>
         </div>
       ) : (
-        <div className={`${styles.hamburger} p-2 z-50 relative`} onClick={handleDropdownClick}>
+        <div
+          className={`${styles.hamburger} p-2 z-50 relative`}
+          onClick={handleDropdownClick}
+        >
           <img
             className="w-6 h-6"
-            src={isMenuOpen ? '/images/navbar/close.svg' : '/images/navbar/menu.svg'}
+            src={
+              isMenuOpen
+                ? '/images/navbar/close.svg'
+                : '/images/navbar/menu.svg'
+            }
             alt="menu"
           />
         </div>
@@ -119,40 +140,47 @@ function NavBar() {
             className="fixed top-0 left-0 w-full h-[100dvh] bg-black bg-opacity-95 z-40 flex items-center justify-center overflow-y-auto"
           >
             <div className="flex flex-col items-center justify-center gap-6 w-full px-4">
-              <Nav.Link 
-                href="/" 
+              <Link
+                href="/"
                 className={`${styles.links} ${styles.navlinkltr} text-lg`}
                 onClick={handleLinkClick}
               >
                 Home
-              </Nav.Link>
-              <Nav.Link 
-                href="/service" 
+              </Link>
+              <Link
+                href="/service"
                 className={`${styles.links} ${styles.navlinkltr} text-lg`}
                 onClick={handleLinkClick}
               >
-                Service
-              </Nav.Link>
-              <Nav.Link 
-                href="/career" 
+                   What we DO
+              </Link>
+              <Link
+                href="/career"
                 className={`${styles.links} ${styles.navlinkltr} text-lg`}
                 onClick={handleLinkClick}
               >
-                Career
-              </Nav.Link>
-              <Nav.Link 
-                href="/about" 
+                     Work with Us
+              </Link>
+              <Link
+                href="/about"
                 className={`${styles.links} ${styles.navlinkltr} text-lg`}
                 onClick={handleLinkClick}
               >
-                About
-              </Nav.Link>
+                Who we Are
+              </Link>
+              <Link
+                href="/contactUs"
+                className={`${styles.links} ${styles.navlinkltr} text-lg`}
+                onClick={handleLinkClick}
+              >
+                    Get in Touch
+              </Link>
 
               <div className="flex flex-col gap-4 mt-6 w-full max-w-[280px]">
                 <motion.button
                   whileHover={{
                     scale: 1.05,
-                    transition: { duration: 0.2 }
+                    transition: { duration: 0.2 },
                   }}
                   whileTap={{ scale: 0.95 }}
                   className="btn-submit text-base py-2"
@@ -161,17 +189,7 @@ function NavBar() {
                   <Nav.Link href="/login">Login</Nav.Link>
                 </motion.button>
 
-                <motion.button
-                  whileHover={{
-                    scale: 1.05,
-                    transition: { duration: 0.2 }
-                  }}
-                  whileTap={{ scale: 0.95 }}
-                  className="btn-submit text-base py-2"
-                  onClick={handleLinkClick}
-                >
-                  <Nav.Link href="/contactUs">Contact</Nav.Link>
-                </motion.button>
+               
               </div>
             </div>
           </motion.div>
