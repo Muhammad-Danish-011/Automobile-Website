@@ -124,16 +124,17 @@ export default function Services() {
       </div>
 
       {/* Documentation & Support */}
-      <div className={styles.items}>
-        <div className={styles.itemimg}>
+      <div className={`${styles.items} flex flex-col sm:flex-row items-center`}>
+        <div className={`${styles.itemimg} w-full sm:w-auto flex justify-center`}>
           <Image
-            className={styles.benefits_image}
+            className={`${styles.benefits_image} w-20 h-20 sm:w-24 sm:h-24 object-contain`}
             src="/images/Trident/benefits/image 1083.png"
             alt="Documentation Support"
             width={100}
             height={100}
           />
         </div>
+        
         <div className={styles.itempara}>
           <h3 className={styles.item_heading}>Documentation & Support</h3>
           <p className={styles.itempara_para}>
@@ -144,13 +145,15 @@ export default function Services() {
       </div>
 
     </div>
-
-
-          <section className="benefits-section py-16 px-4 bg-gray-100 text-center overflow-x-hidden">
-      <h1 className="benefits-heading text-3xl md:text-4xl font-bold mb-12 text-gray-900">
+ 
+   
+        <div className={styles.itemcontainer}>
+          
+        <div className={styles.itemimg}>
+  
+   <h1 className="benefits-heading text-3xl md:text-4xl font-bold mb-12 text-black text-center w-full">    
         Why Choose Us?
-      </h1>
-
+</h1>      
       <div className="benefits-container grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto w-full px-4">
         {services.map((service, index) => (
           <div
@@ -169,8 +172,8 @@ export default function Services() {
           </div>
         ))}
       </div>
-    </section>
-
+    </div>
+    </div>
 
         </div>
       </div>
