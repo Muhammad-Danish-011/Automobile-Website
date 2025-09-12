@@ -18,7 +18,7 @@ export default function Services() {
       
    <div className={styles.outer}>
   <div className={styles.benefits}>
-    <h1 className={styles.benefits_title} style={{ color: "black" }}>
+      <h1 className="benefits-heading text-3xl md:text-4xl font-bold mb-12 text-gray-900">
       Our Top Services
     </h1>
     <div className={styles.itemcontainer}>
