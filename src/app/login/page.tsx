@@ -56,7 +56,7 @@ export default function LoginPage() {
               </p>
             )}
 
-            <div className="mb-4 sm:mb-5 md:mb-6">
+            <div className="mb-4 sm:mb-5 md:mb-6 ">
               <label className="block text-gray-700 font-medium mb-2 text-sm md:text-base">
                 Email
               </label>
@@ -74,17 +74,18 @@ export default function LoginPage() {
               <label className="block text-gray-700 font-medium mb-2 text-sm md:text-base">
                 Password
               </label>
-              <div className="relative">
+
+              <div className="flex items-center border border-gray-300 focus-within:border-[#e76c02] focus-within:ring-2 focus-within:ring-[#e76c02] rounded-lg p-2 sm:p-3">
                 <input
                   type={showPassword ? 'text' : 'password'}
                   placeholder="Enter your password"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
-                  className="w-full border border-gray-300 rounded-lg p-2 sm:p-3 focus:outline-none focus:ring-2 focus:ring-[#e76c02] transition text-sm md:text-base pr-10"
+                  className="w-full border-0 outline-none focus:outline-none focus:ring-0 text-sm md:text-base"
                   required
                 />
                 <span
-                  className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500 hover:text-gray-700 cursor-pointer"
+                  className="ml-3 text-gray-500 hover:text-gray-700 cursor-pointer flex items-center"
                   onClick={() => setShowPassword(!showPassword)}
                 >
                   {showPassword ? (
