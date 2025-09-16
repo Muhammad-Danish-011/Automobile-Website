@@ -75,7 +75,7 @@ export default function FaqSection() {
 
             <h1 className={`${styles.heading} hover:text-[#e76c02] transition-all duration-300 m-4 `}>Common Questions</h1>
             <p className={styles.subheading}>
-              Haven't found what you're looking for?{' '}
+              Haven&apos;t found what you&apos;re looking for?{" "}
               <a
                 href="/contactUs"
                 className="text-[#e76c02] hover:text-[#e76c02]/80 underline transition-all duration-300"
