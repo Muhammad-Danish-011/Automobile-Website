@@ -37,8 +37,8 @@ const HeroSection = ({
         <a
           href={
             !isContactUs
-              ? 'https://www.facebook.com/SAEIITBHU/'
-              : 'https://www.facebook.com/TeamTridentIITBHU/'
+              ? 'https://www.facebook.com/dglbeforward/'
+              : 'https://www.facebook.com/dglbeforward/'
           }
         >
           <Image
@@ -51,8 +51,8 @@ const HeroSection = ({
         <a
           href={
             !isContactUs
-              ? 'https://in.linkedin.com/company/sae-collegiate-club-iit-varanasi'
-              : 'https://www.linkedin.com/company/team-trident-iit-bhu'
+              ? 'https://www.linkedin.com/company/dgl-beforward/'
+              : 'https://www.linkedin.com/company/dgl-beforward/'
           }
         >
           <Image

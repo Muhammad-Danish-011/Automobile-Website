@@ -104,7 +104,7 @@ const Footer: NextPage = () => {
               />
               Instagram
             </Link>
-            <Link href="" className="flex gap-2 items-center">
+            <Link href="https://www.facebook.com/dglbeforward/" className="flex gap-2 items-center">
               <Image
                 width={24}
                 height={24}
@@ -113,7 +113,7 @@ const Footer: NextPage = () => {
               />
               Facebook
             </Link>
-            <Link href="" className="flex gap-2 items-center">
+            <Link href="https://www.linkedin.com/company/dgl-beforward/" className="flex gap-2 items-center">
               <Image
                 width={24}
                 height={24}
@@ -122,7 +122,7 @@ const Footer: NextPage = () => {
               />
               LinkedIn
             </Link>
-            <Link href="" className="flex gap-2 items-center">
+            <Link href="/contactUs" className="flex gap-2 items-center">
               <Image
                 width={24}
                 height={24}

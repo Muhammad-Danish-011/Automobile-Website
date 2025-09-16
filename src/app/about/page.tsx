@@ -5,6 +5,7 @@ import AboutTeam from './AboutTeam'
 import HeroSection from '@/components/HeroSection'
 import Heading from '@/components/Heading'
 import {style} from '../career/cardStyle';
+import FaqSection from '@/components/FaqSection'
 
 
 const title = 'About Us'
@@ -104,6 +105,10 @@ and long-term partnerships across the globe.
             img2="/images/about/teamRC2.png"
           />
         </div>
+             <section className="benefits-section">
+        <FaqSection/>
+        </section>
+        
       </div>
     </>
   )

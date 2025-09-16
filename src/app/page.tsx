@@ -10,6 +10,7 @@ import Heading from '@/components/Heading';
 import OrangeSection from '@/components/OrangeSection';
 import { HomeCard } from "@/components/home/HomeCards";
 import { DatahomeCards } from "@/components/home/dataHomeCard";
+import FaqSection from "@/components/FaqSection";
 
 function Home() {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -185,6 +186,8 @@ function Home() {
         </div>
       </div>
 
+
+
       {/* Achievements Section */}
       <div className={styles.ourachievments_sae}>
         <Heading headingText="Our Achievements" />
@@ -192,6 +195,14 @@ function Home() {
           <Timeline />
         </div>
       </div>
+
+{/* Faq Question  */}
+
+     <section className="benefits-section">
+<FaqSection/>
+</section>
+
+{/* orange section */}
 
       <OrangeSection />
     </>
